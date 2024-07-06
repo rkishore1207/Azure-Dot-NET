@@ -32,3 +32,17 @@
 
 ![App Service](https://github.com/rkishore1207/Azure-Dot-NET/assets/146698138/bd9137c5-78d9-468d-9ba9-0c11ebb72194)
 
+### Deploy WebApplication to Azure with CLI
+```
+* dotnet new webapp -o first-deploy-app
+* dotnet build
+* dotnet publist -o Publish
+* cd .\Publish\
+* Compress * Publish.zip (* -> all file in that folder converted to zip in the name of Publish.zip)
+* Create our own Resource Group, AppService Plan and WebApp to deploy our DotNet project.
+* Resource Group -> az group create --location eastus --resource-group kishore-resource-group
+* AppService Plan -> az appservice plan create -g kishore-resource-group -n kishore-appservice-plan
+* Webapp -> az webapp create -g kishore-resource-group -p kishore-appservice-plan -n kishore-webapp
+* Then deploy -> az webapp deployment source config-zip --src .\Publish.zip\ -n kishore-webapp -g kishore-resource-group
+* Open -> az webapp browse -g kishore-resource-group -n kishore-webapp
+```
