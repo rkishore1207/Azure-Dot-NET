@@ -51,3 +51,9 @@
 * First Dowload the Extension for the Webapp, `ASP.NET Core Logging` Extension.
 * Go to the Logging -> Click `App Service Logs`, and Enable **Application Logging(File System)** to `Verbose` (OS can log all the errors from the Device)
 * We can see, all the logs on the Command Prompt.
+
+### App Settings Configuration
+* At our Api, add sample key and value at appsettings.json and consume.
+* It will vary depends upon our value at Azure.
+* We can view our application in Azure  thorugh **App Service Editor (Preview)**
+* Go to Configuration, click add App Settings, give the key and value for the **Production Environment**, and this value will be override at the Browser.
