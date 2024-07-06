@@ -46,3 +46,8 @@
 * Then deploy -> az webapp deployment source config-zip --src .\Publish.zip\ -n kishore-webapp -g kishore-resource-group
 * Open -> az webapp browse -g kishore-resource-group -n kishore-webapp
 ```
+
+### Azure WebApp Logging
+* First Dowload the Extension for the Webapp, `ASP.NET Core Logging` Extension.
+* Go to the Logging -> Click `App Service Logs`, and Enable **Application Logging(File System)** to `Verbose` (OS can log all the errors from the Device)
+* We can see, all the logs on the Command Prompt.
