@@ -36,9 +36,9 @@
 ```
 * dotnet new webapp -o first-deploy-app
 * dotnet build
-* dotnet publist -o Publish
+* dotnet publish -o Publish
 * cd .\Publish\
-* Compress * Publish.zip (* -> all file in that folder converted to zip in the name of Publish.zip)
+* Compress-Archive * Publish.zip (* -> all file in that folder converted to zip in the name of Publish.zip)
 * Create our own Resource Group, AppService Plan and WebApp to deploy our DotNet project.
 * Resource Group -> az group create --location eastus --resource-group kishore-resource-group
 * AppService Plan -> az appservice plan create -g kishore-resource-group -n kishore-appservice-plan
