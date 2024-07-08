@@ -57,3 +57,10 @@
 * It will vary depends upon our value at Azure.
 * We can view our application in Azure  thorugh **App Service Editor (Preview)**
 * Go to Configuration, click add App Settings, give the key and value for the **Production Environment**, and this value will be override at the Browser.
+
+### Deployment Slots
+* It is a another **Webapp** that was clonned from the Webapp which was deployed in the **Production environment**.
+* We need to create separate `Slot` for the new Webapp under the **same plan**.
+* For **Stage**, at git-hub create new branch, and configure that branch in the newly created *stage slot (at deployment center)*.
+* Once it was done it will hosted as a new Webapp, this is for check previously if our application behave correctly, before it went into the Production.
+* If everything is work fine, then merge that changes into develop branch and it will trigger the deployment automatically and our changes will move into Production too.
