@@ -64,3 +64,11 @@
 * For **Stage**, at git-hub create new branch, and configure that branch in the newly created *stage slot (at deployment center)*.
 * Once it was done it will hosted as a new Webapp, this is for check previously if our application behave correctly, before it went into the Production.
 * If everything is work fine, then merge that changes into develop branch and it will trigger the deployment automatically and our changes will move into Production too.
+
+## Azure SQL Database
+* Create Azure SQL Database in the Portal.
+* We need to create `SQL Server` (Like Appservice plan for Webapp), we have some configuration, based on our requirement we would choose the package of SQL Server.
+* And Choose Authentication from **SQL Authentication** (if our code have **Azure AD** then Select both), here give `User Login and Password` for our Database.
+* We have to set **SET SERVER FIREWALL** -> Select **Selected Networks**, add **new Firewall rules**, copy our local `SSMS's IP address` and paste here then create, as same as create needed firewall rules, with add the `default one` from the Azure portal itself (`default IP address)`.
+* Check Allow Azure Services Checkbox.
+* Copy the Connection Strings (ADO.NET)
