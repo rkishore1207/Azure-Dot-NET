@@ -69,6 +69,27 @@
 * Create Azure SQL Database in the Portal.
 * We need to create `SQL Server` (Like Appservice plan for Webapp), we have some configuration, based on our requirement we would choose the package of SQL Server.
 * And Choose Authentication from **SQL Authentication** (if our code have **Azure AD** then Select both), here give `User Login and Password` for our Database.
-* We have to set **SET SERVER FIREWALL** -> Select **Selected Networks**, add **new Firewall rules**, copy our local `SSMS's IP address` and paste here then create, as same as create needed firewall rules, with add the `default one` from the Azure portal itself (`default IP address)`.
-* Check Allow Azure Services Checkbox.
+* We have to set **SET SERVER FIREWALL** -> Select **Selected Networks**, add **new Firewall rules**, copy our local `SSMS's IP address` and paste here then create, as same as create needed firewall rules, with add the `default one` from the Azure portal itself `(default IP address)`.
+* Check Allow **Azure Services** Checkbox.
 * Copy the Connection Strings (ADO.NET)
+* In API, create Connection Strings Key at **app.development.json** file, the same we need to configure in the Azure WebApp, *Configurtion -> Add new Connection String -> paster the key and value and type is Azure SQL*. Then only it would reflect in the Production's App.
+```
+* dotnet tool install --global dotnet-ef
+* dotnet add package Microsoft.EntityFrameworkCore.Design
+* dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+* Configure Migrations for EF -> dotnet ef Migrations add Initial
+* dotnet ef database update
+* By using Scaffold Command, create new page -> dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+* dotnet add package Microsoft.EntityFrameworkCore.Tools
+* dotnet aspnet-codegenerator razorpage -m Person -dc AzureDbContext -udl -outDir Pages/Persons --referenceScriptLibraries
+```
+
+## Azure Cosmos DB
+* It is also a **Database** but we don't need any server to do Queries, in the cloud itself it has Database and we **will do Query there itself**.
+* We have to create `Azure-cosmos-account`, and need to create Databases, Containers and items (optional).
+* Containers are **Tables** and Items are **Records**.
+* We have to connect this Credential to our code by ConnectionString (URI + Primary key) and DB Name and Container Name by Cosmos Client.
+* For Git hub `Workflow`, we can configure **our root folder** by adding that folder in the end of each step.
+* We cannot push directly to github with Secret keys
+* We can put those keys on `Environment variables` through Right click on Project -> Debug -> General -> launch -> Add New Envionment variables.
+* Or Add those in the **command prompt** itself.
