@@ -93,3 +93,17 @@
 * We cannot push directly to github with Secret keys
 * We can put those keys on `Environment variables` through Right click on Project -> Debug -> General -> launch -> Add New Envionment variables.
 * Or Add those in the **command prompt** itself.
+
+## Azure Storage Account
+
+![Storage Account](https://github.com/user-attachments/assets/e4bcc1a3-d660-4931-baff-b32446671f79)
+
+## Azure Service Bus
+* It is a **Message broker**, which holds `message` and some other applications are trigger by using this message.
+* **Storage Queue** also a Message broker.
+* Message broker helps to transfer business related data between applications.
+* It ensures **Decoupling** between applications.
+* **Reliability** -> if one application goes down, message broker stores the message, once that application is available that can take the message from broker.
+* **Scalability** -> don't hold the unnecessary message in the queue, if that message is read then it will delete it from the queue.
+* It is **PaaS**.
+* If some messages aren't read properly, that will stored in the **Dead letter Queue**.
