@@ -93,3 +93,42 @@
 * We cannot push directly to github with Secret keys
 * We can put those keys on `Environment variables` through Right click on Project -> Debug -> General -> launch -> Add New Envionment variables.
 * Or Add those in the **command prompt** itself.
+
+## Azure Storage Account
+
+![Storage Account](https://github.com/user-attachments/assets/e4bcc1a3-d660-4931-baff-b32446671f79)
+
+## Azure Service Bus
+* It is a **Message broker**, which holds `message` and some other applications are trigger by using this message.
+* **Storage Queue** also a Message broker.
+* Message broker helps to transfer business related data between applications.
+* It ensures **Decoupling** between applications.
+* **Reliability** -> if one application goes down, message broker stores the message, once that application is available that can take the message from broker.
+* **Scalability** -> don't hold the unnecessary message in the queue, if that message is read then it will delete it from the queue.
+* It is **PaaS**.
+* If some messages aren't read properly, that will stored in the **Dead letter Queue**.
+
+## Azure Serverless Function
+
+![Azure Functions](https://github.com/user-attachments/assets/4ed9f2dc-f341-4eef-8c6e-4e5674ea1e48)
+
+* All the internet are came from server only but, as a developer we don't worry about the server, just we have to give solutions to the problems.
+* It is an event-driven service **(event router)** to make a communication between **producer** and **consumer**.
+
+### Triggers and Bindings
+
+![Triggers and Bindings](https://github.com/user-attachments/assets/9aa377c3-b51e-40e5-a4f9-ddd8b34f675a)
+
+--------------
+### Durable Functions
+* Regularly functions doesn't store any state in it, so if one function stores the incoming states in it, then its called Durable Function.
+* This will done by passing function as a parameter to another function (Passing function is **Orchestrator** and called function is **Entity**).
+* There are two patterns for Durable Functions
+1. **Function Chaining**
+- Passing function into another function to store state.
+- One output can be used as a input for another function.
+2. **FanIn - FanOut**
+- Executing all functions parallely, to store the state.
+- But if all the functions are executed completely, then only it will give output.
+
+> Accepted Response -> That request may or may not complete but now we are good to go
