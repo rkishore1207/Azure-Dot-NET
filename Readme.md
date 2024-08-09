@@ -132,3 +132,11 @@
 - But if all the functions are executed completely, then only it will give output.
 
 > Accepted Response -> That request may or may not complete but now we are good to go
+
+## Azure AD (Active Directory)
+* It had two types of offerings
+    1. AD B2B (Business to Business) - internal users that is employees of the same organization
+    2. AD B2C (Business to Customer) - external users may be clients whose wants to login our organization's application
+* One account is enough per employee to login all application in an Organization.
+* They don't need to remember different passwords for different application.
+* And all the maintanance and other factors will be handled by Azure itself.
